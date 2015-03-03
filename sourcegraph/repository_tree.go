@@ -86,9 +86,8 @@ type SourceCodeToken struct {
 	StartByte int `json:"-"`
 	EndByte   int `json:"-"`
 
-	// URL specifies that the token is a reference or a definition,  based on the
-	// IsDef property.
-	URL string `json:",omitempty"`
+	// URL contains a slice of links to all of the definitions for this ref.
+	URL []string `json:",omitempty"`
 
 	// IsDef specifies whether the token is a definition.
 	IsDef bool `json:",omitempty"`
