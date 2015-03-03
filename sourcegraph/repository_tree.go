@@ -86,7 +86,9 @@ type SourceCodeToken struct {
 	StartByte int `json:"-"`
 	EndByte   int `json:"-"`
 
-	// URL contains a slice of links to all of the definitions for this ref.
+	// URL contains a slice of links to all of the definitions for this ref. Generally,
+	// this slice will only contain one definition, but in some cases (such as Scala), it
+	// is possible to have overlapping definitions.
 	URL []string `json:",omitempty"`
 
 	// IsDef specifies whether the token is a definition.
